@@ -10,6 +10,6 @@ const todoListRoutes = express.Router();
 
 todoListRoutes.get("/", getTodoList);
 todoListRoutes.post("/", createTodoList);
-todoListRoutes.delete("/:roll", deleteTodoList);
+todoListRoutes.delete("/", deleteTodoList);
 
 export default todoListRoutes;
