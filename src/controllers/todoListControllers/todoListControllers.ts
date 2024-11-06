@@ -28,7 +28,7 @@ export const createTodoList = async (req: Request, res: Response) => {
 export const deleteTodoList = async (req: Request, res: Response) => {
   try {
     await TodoList.deleteOne({ id: req.body.id });
-    res.status(200).json({ message: "Student deleted successfully" });
+    res.status(200).json({ message: "Deleted successfully" });
   } catch (error) {
     res.status(400).json({
       message: (error as Error).message,
