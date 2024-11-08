@@ -35,3 +35,14 @@ export const deleteTodoList = async (req: Request, res: Response) => {
     });
   }
 };
+
+export const updateTodoList = async (req: Request, res: Response) => {
+  try {
+    await TodoList.updateOne({ id: req.body.id }, req.body);
+    res.status(200).json({ message: "Updated successfully" });
+  } catch (error) {
+    res.status(400).json({
+      message: (error as Error).message,
+    });
+  }
+};
